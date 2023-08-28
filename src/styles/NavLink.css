@@ -1,8 +1,8 @@
 .navbar {
-  border: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.358);
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 1rem;
 }
 
 .title-div {

@@ -1,0 +1,18 @@
+.individual-rocket {
+  padding: 2rem;
+  display: flex;
+}
+
+.about-rocket {
+  padding: 1rem;
+}
+
+.reserve-btn {
+  padding: 0.7rem;
+  background-color: #0260ff;
+  color: #fff;
+}
+
+.reserve-btn:hover {
+  background-color: #014ed3;
+}
