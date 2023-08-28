@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { v4 as uuidv4 } from 'suuid';
 import { fetchRocketsAsync } from '../redux/rocketSlice';
+import '../styles/Rockets.css';
 
 function Rockets() {
   const dispatch = useDispatch();
@@ -27,23 +28,9 @@ function Rockets() {
   }
 
   return (
-    <div>
-      <h1>Rockets</h1>
+    <div className="rocketsPage">
       {rockets.map((rocket) => (
-        <div key={rocket.id}>
-          <h2>{rocket.name}</h2>
-          <p>
-            ID:
-            {rocket.id}
-          </p>
-          {/* <p>
-            Type:
-            {rocket.type}
-          </p> */}
-          <p>
-            description:
-            {rocket.description}
-          </p>
+        <div className="individual-rocket" key={rocket.id}>
           <div>
             {rocket.flickr_images.length > 0 && (
               <img
@@ -53,6 +40,24 @@ function Rockets() {
                 style={{ maxWidth: '300px' }}
               />
             )}
+          </div>
+          <div className="about-rocket">
+            <h2>{rocket.name}</h2>
+            {/* <p>
+              ID:
+              {rocket.id}
+            </p>
+            <p>
+              Type:
+              {rocket.type}
+            </p> */}
+            <p>
+              {' '}
+              {rocket.description}
+            </p>
+            <button className="reserve-btn" type="button">
+              Reserve Rocket
+            </button>
           </div>
         </div>
       ))}
