@@ -13,8 +13,6 @@ export const fetchRocketsAsync = createAsyncThunk(
   'rockets/fetchRockets',
   async () => {
     const response = await axios.get(baseUrl);
-    console.log('status is:', response);
-    console.log('fetched data is:', response.data);
     return response.data;
   },
 );

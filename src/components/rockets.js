@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'suuid';
 import { fetchRocketsAsync } from '../redux/rocketSlice';
 
 function Rockets() {
@@ -36,19 +36,23 @@ function Rockets() {
             ID:
             {rocket.id}
           </p>
-          <p>
+          {/* <p>
             Type:
             {rocket.type}
+          </p> */}
+          <p>
+            description:
+            {rocket.description}
           </p>
           <div>
-            {rocket.flickr_images.map((image) => (
+            {rocket.flickr_images.length > 0 && (
               <img
-                key={uuidv4()}
-                src={image}
+                key={rocket.id}
+                src={rocket.flickr_images[0]}
                 alt={`Rocket ${rocket.name}`}
                 style={{ maxWidth: '300px' }}
               />
-            ))}
+            )}
           </div>
         </div>
       ))}
