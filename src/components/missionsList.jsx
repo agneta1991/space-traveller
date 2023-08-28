@@ -1,5 +1,4 @@
-// MissionsList.jsx
-
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMissions, selectMappedMissions, selectMissionsStatus } from '../redux/missions/missionsSlice';
@@ -32,7 +31,7 @@ function MissionsList() {
             <th>Mission</th>
             <th className="wider-column">Description</th>
             <th>Status</th>
-            <th>Join</th>
+            <th />
           </tr>
         </thead>
         <tbody>
