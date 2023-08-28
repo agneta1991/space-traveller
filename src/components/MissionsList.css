@@ -1,0 +1,38 @@
+/* MissionsList.css */
+
+.missions-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.missions-table th,
+.missions-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.even-row {
+  background-color: #f2f2f2;
+}
+
+.odd-row {
+  background-color: #fff;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.wider-column {
+  width: 40%;
+}
+
+.joinMission {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin-left: 30%;
+  cursor: pointer;
+}
