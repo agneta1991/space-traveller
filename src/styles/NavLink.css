@@ -1,0 +1,41 @@
+.navbar {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.title-div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.title-div > img {
+  height: 60%;
+  width: auto;
+  padding: 1rem;
+}
+
+.title-div > h1 {
+  margin: 0;
+}
+
+.links-ul {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.links-ul > li {
+  padding: 0.5rem;
+  list-style: none;
+}
+
+.links-ul > li > a {
+  text-decoration: none;
+}
+
+.links-ul > li > .active {
+  text-decoration: underline;
+}
