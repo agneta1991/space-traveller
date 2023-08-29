@@ -16,3 +16,8 @@
 .reserve-btn:hover {
   background-color: #014ed3;
 }
+
+.reserve-btn.reserved {
+    color: grey;
+    background-color: #fff;
+}
