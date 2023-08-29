@@ -1,10 +1,10 @@
 import React from 'react';
-import MissionsList from './missionsList';
+import MissionsTable from './missionsTable';
 
 export default function missions() {
   return (
     <>
-      <MissionsList />
+      <MissionsTable />
     </>
   );
 }
