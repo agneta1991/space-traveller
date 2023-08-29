@@ -1,8 +1,8 @@
+/* eslint-disable max-len */
 // missionsSlice.js
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { createSelector } from 'reselect';
 
 const missionsUrl = 'https://api.spacexdata.com/v3/missions';
@@ -24,7 +24,16 @@ const missionsSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {},
+  reducers: {
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+      state.data = state.data.map((mission) => (mission.mission_id === missionId ? { ...mission, reserved: true } : mission));
+    },
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+      state.data = state.data.map((mission) => (mission.mission_id === missionId ? { ...mission, reserved: false } : mission));
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMissions.pending, (state) => {
@@ -51,7 +60,10 @@ export const selectMappedMissions = createSelector(
     mission_id: mission.mission_id,
     mission_name: mission.mission_name,
     description: mission.description,
+    reserved: mission.reserved || false, // Default reserved status
   })),
 );
+
+export const { joinMission, leaveMission } = missionsSlice.actions;
 
 export default missionsSlice.reducer;

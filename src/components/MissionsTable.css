@@ -30,9 +30,19 @@
 }
 
 .joinMission {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background:none;
+  border: 1px solid #6d757d;
+  font-size: 1rem;
   padding: 8px;
   margin-left: 30%;
   cursor: pointer;
+  border-radius: 7px;
+  color: #6d757d;
+}
+
+.status {
+  text-align: center;
+  color: #fff;
+  padding: 3px;
+  border-radius: 7px;
 }
