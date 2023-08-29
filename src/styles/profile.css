@@ -1,0 +1,16 @@
+.main-profile-div {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.missions-profile-div,
+.rockets-profile-div {
+  margin: 1rem;
+  width: 80%;
+}
+
+.content {
+  border: 1px solid grey;
+  padding: 1rem;
+}
