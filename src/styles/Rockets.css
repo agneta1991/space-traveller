@@ -1,6 +1,7 @@
 .individual-rocket {
   padding: 2rem;
   display: flex;
+  line-height: 1.8rem;
 }
 
 .about-rocket {
@@ -11,13 +12,27 @@
   padding: 0.7rem;
   background-color: #0260ff;
   color: #fff;
+  border-radius: 4px;
 }
 
 .reserve-btn:hover {
   background-color: #014ed3;
+  border: 1px solid grey;
 }
 
 .reserve-btn.reserved {
   color: grey;
   background-color: #fff;
+}
+
+.reservation-status {
+  background-color: #0260ff;
+  color: #fff;
+  width: 4rem;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.2rem;
+  margin-right: 0.8rem;
+  font-size: smaller;
+  text-align: center;
 }
