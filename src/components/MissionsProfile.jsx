@@ -14,11 +14,17 @@ function MissionsProfile() {
       <h2>My Missions</h2>
       <table className="missions-profile-table">
         <tbody>
-          {joinedMissions.map((mission) => (
-            <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
+          {joinedMissions.length === 0 ? (
+            <tr>
+              <td className="no-missions-placeholder">No Missions Added</td>
             </tr>
-          ))}
+          ) : (
+            joinedMissions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td>{mission.mission_name}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

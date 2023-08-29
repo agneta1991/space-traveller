@@ -56,7 +56,9 @@ function Rockets() {
           <div className="about-rocket">
             <h2>{rocket.name}</h2>
             <p>
-              {' '}
+              {rocket.reserved && (
+                <span className="reservation-status">Reserved </span>
+              )}
               {rocket.description}
             </p>
             <button
