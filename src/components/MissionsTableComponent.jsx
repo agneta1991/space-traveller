@@ -20,7 +20,7 @@ function MissionsTableComponent() {
     <table className="missions-table">
       <thead>
         <tr>
-          <th>Mission</th>
+          <th className="missionColumn">Mission</th>
           <th className="wider-column">Description</th>
           <th>Status</th>
           <th />
