@@ -1,3 +1,10 @@
-const Missions = () => <h1>Missions</h1>;
+import React from 'react';
+import MissionsTable from './missionsTable';
 
-export default Missions;
+export default function missions() {
+  return (
+    <>
+      <MissionsTable />
+    </>
+  );
+}
