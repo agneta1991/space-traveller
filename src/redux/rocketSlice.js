@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { createAction } from 'redux-actions';
+import { createSelector } from 'reselect';
 import axios from 'axios';
 
 const initialState = {
@@ -25,17 +25,11 @@ const rocketsSlice = createSlice({
   reducers: {
     reserveRocket: (state, action) => {
       const rocketId = action.payload;
-      return {
-        ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket)),
-      };
+      state.rockets = state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket));
     },
     unreserveRocket: (state, action) => {
       const rocketId = action.payload;
-      return {
-        ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket)),
-      };
+      state.rockets = state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket));
     },
   },
   extraReducers: (builder) => {
@@ -53,6 +47,18 @@ const rocketsSlice = createSlice({
       });
   },
 });
+
+export const selectRocketsData = (state) => state.rockets.rockets;
+
+export const selectMappedRockets = createSelector(
+  [selectRocketsData],
+  (rockets) => rockets.map((rocket) => ({
+    id: rocket.id,
+    rocket_name: rocket.rocket_name,
+    description: rocket.description,
+    reserved: rocket.reserved || false,
+  })),
+);
 
 export default rocketsSlice.reducer;
 export const { reserveRocket, unreserveRocket } = rocketsSlice.actions;
