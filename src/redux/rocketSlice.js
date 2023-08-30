@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { createAction } from 'redux-actions';
+import { createSelector } from 'reselect';
 import axios from 'axios';
 
 const initialState = {
@@ -37,6 +37,16 @@ const rocketsSlice = createSlice({
         rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket)),
       };
     },
+    // reserveRocket: (state, action) => {
+    //     const rocketId = action.payload;
+    //     const newState = state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket));
+    //     state.rockets = newState;
+    //   },
+    //   unreserveRocket: (state, action) => {
+    //     const rocketId = action.payload;
+    //     const newState = state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket));
+    //     state.rockets = newState;
+    //   },
   },
   extraReducers: (builder) => {
     builder
@@ -53,6 +63,16 @@ const rocketsSlice = createSlice({
       });
   },
 });
+
+export const selectRocketsData = (state) => state.rockets.rockets;
+
+export const selectMappedRockets = createSelector([selectRocketsData], (rockets) => rockets.map((rocket) => ({
+  id: rocket.id,
+  rocket_name: rocket.name,
+  description: rocket.description,
+  imageURL: rocket.flickr_images[0],
+  reserved: rocket.reserved || false,
+})));
 
 export default rocketsSlice.reducer;
 export const { reserveRocket, unreserveRocket } = rocketsSlice.actions;
