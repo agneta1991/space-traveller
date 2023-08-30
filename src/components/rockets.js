@@ -23,9 +23,10 @@ function Rockets() {
   };
 
   useEffect(() => {
-    console.log('data', mappedRockets);
-    dispatch(fetchRocketsAsync());
-  }, [dispatch]);
+    if (status === 'idle') {
+      dispatch(fetchRocketsAsync());
+    }
+  }, [dispatch, status]);
 
   if (status === 'loading') {
     return <div>Loading...</div>;
