@@ -1,4 +1,5 @@
-.missions-profile-table {
+.missions-profile-table,
+.rocket-profile-table {
   width: 40vw;
   border-collapse: collapse;
   border: 1px solid black;
@@ -9,7 +10,8 @@
 h2 {
   margin: 20px;
 }
-
+.rocket-profile-table th,
+.rocket-profile-table td,
 .missions-profile-table th,
 .missions-profile-table td {
   border: 1px solid black;

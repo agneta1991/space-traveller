@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectMappedRockets } from '../redux/rocketSlice';
+import './MissionsProfile.css';
 
 function RocketProfile() {
-  const mappedRockets = useSelector(selectMappedRockets);
-  const bookedRockets = mappedRockets.filter((rocket) => rocket.reserved);
+  const rockets = useSelector((state) => state.rockets.rockets);
+  const bookedRockets = rockets.filter((rocket) => rocket.reserved);
 
   return (
     <div>
+      <h2>My Rockets</h2>
       <table className="rocket-profile-table">
         <tbody>
           {bookedRockets.length === 0 ? (
@@ -17,7 +18,7 @@ function RocketProfile() {
           ) : (
             bookedRockets.map((rocket) => (
               <tr key={rocket.id}>
-                <td>{rocket.rocket_name}</td>
+                <td>{rocket.name}</td>
               </tr>
             ))
           )}
