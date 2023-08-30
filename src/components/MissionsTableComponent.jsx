@@ -9,6 +9,7 @@ function MissionsTableComponent() {
   const mappedMissions = useSelector(selectMappedMissions);
 
   const handleToggleMission = (missionId, reserved) => {
+    console.log(mappedMissions);
     if (reserved) {
       dispatch(leaveMission(missionId));
     } else {

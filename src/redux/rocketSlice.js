@@ -66,15 +66,13 @@ const rocketsSlice = createSlice({
 
 export const selectRocketsData = (state) => state.rockets.rockets;
 
-export const selectMappedRockets = createSelector(
-  [selectRocketsData],
-  (rockets) => rockets.map((rocket) => ({
-    id: rocket.id,
-    rocket_name: rocket.rocket_name,
-    description: rocket.description,
-    reserved: rocket.reserved || false,
-  })),
-);
+export const selectMappedRockets = createSelector([selectRocketsData], (rockets) => rockets.map((rocket) => ({
+  id: rocket.id,
+  rocket_name: rocket.rocket_name,
+  description: rocket.description,
+  imageURL: rocket.flickr_images[0],
+  reserved: rocket.reserved || false,
+})));
 
 export default rocketsSlice.reducer;
 export const { reserveRocket, unreserveRocket } = rocketsSlice.actions;
