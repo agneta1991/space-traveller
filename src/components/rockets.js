@@ -4,18 +4,20 @@ import {
   fetchRocketsAsync,
   reserveRocket,
   unreserveRocket,
+  selectRocketsData,
 } from '../redux/rocketSlice';
 import '../styles/Rockets.css';
 
 function Rockets() {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rockets.rockets);
+  const rockets = useSelector(selectRocketsData);
   const status = useSelector((state) => state.rockets.status);
   const error = useSelector((state) => state.rockets.error);
 
   const handleReserveClick = (rocketId) => {
     const rocket = rockets.find((rocket) => rocket.id === rocketId);
     if (rocket) {
+      console.log(rocket);
       if (rocket.reserved) {
         dispatch(unreserveRocket(rocketId));
       } else {
@@ -25,6 +27,7 @@ function Rockets() {
   };
 
   useEffect(() => {
+    console.log('data', rockets);
     dispatch(fetchRocketsAsync());
   }, [dispatch]);
 
