@@ -2,7 +2,6 @@
 // missionsSlice.js
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { createSelector } from 'reselect';
 
 const missionsUrl = 'https://api.spacexdata.com/v3/missions';
@@ -10,8 +9,12 @@ const missionsUrl = 'https://api.spacexdata.com/v3/missions';
 export const getMissions = createAsyncThunk('missions/getMissions', async () => {
   // eslint-disable-next-line no-useless-catch
   try {
-    const response = await axios.get(missionsUrl);
-    return response.data;
+    const response = await fetch(missionsUrl);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
   } catch (error) {
     throw error;
   }
