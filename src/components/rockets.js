@@ -5,7 +5,7 @@ import {
   reserveRocket,
   unreserveRocket,
   selectMappedRockets,
-} from '../redux/rocketSlice';
+} from '../redux/rockets/rocketSlice';
 import '../styles/Rockets.css';
 
 function Rockets() {

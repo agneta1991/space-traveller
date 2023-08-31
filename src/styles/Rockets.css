@@ -8,29 +8,32 @@
   padding: 1rem;
 }
 
-.reserve-btn {
-  padding: 0.7rem;
-  background-color: #0260ff;
-  color: #fff;
-  border-radius: 4px;
+.about-rocket h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
 }
 
-.reserve-btn:hover {
-  background-color: #014ed3;
-  border: 1px solid grey;
+.reserve-btn {
+  padding: 0.7rem;
+  border: none;
+  background-color: #027bff;
+  color: #fff;
+  border-radius: 4px;
 }
 
 .reserve-btn.reserved {
   color: grey;
   background-color: #fff;
+  border: 1px solid grey;
 }
 
 .reservation-status {
-  background-color: #0260ff;
+  background-color: #19a3b9;
   color: #fff;
   width: 4rem;
   border: 1px solid #fff;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 0.2rem;
   margin-right: 0.8rem;
   font-size: smaller;
