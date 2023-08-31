@@ -1,7 +1,7 @@
 /* MissionsList.css */
 
 .missions-table {
-  width: 80%;
+  width: 90%;
   border-collapse: collapse;
   margin: 20px auto;
   padding: 10px;
@@ -26,7 +26,7 @@
 }
 
 .wider-column {
-  width: 60%;
+  width: 65%;
 }
 
 .missionColumn {
@@ -36,7 +36,7 @@
 .joinMission {
   background: none;
   border: 1px solid #6d757d;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 8px;
   margin-left: 30%;
   cursor: pointer;
@@ -45,8 +45,11 @@
 }
 
 .status {
+  font-size: 0.9rem;
   text-align: center;
   color: #fff;
   padding: 3px;
   border-radius: 7px;
+  width: 60%;
+  margin: auto;
 }

@@ -1,10 +1,8 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getMissions, selectMissionsStatus, joinMission, leaveMission, selectMappedMissions,
 } from '../redux/missions/missionsSlice';
-// import './missionsTable.css';
 import './missions.css';
 
 function Missions() {
@@ -41,7 +39,7 @@ function Missions() {
           <th className="missionColumn">Mission</th>
           <th className="wider-column">Description</th>
           <th>Status</th>
-          <th />
+          <th> </th>
         </tr>
       </thead>
       <tbody>
@@ -52,7 +50,7 @@ function Missions() {
           >
             <td className="bold-text">{mission.mission_name}</td>
             <td>{mission.description}</td>
-            <td><p data-testid="mission-status" style={{ backgroundColor: mission.reserved ? '#419bf9' : '#6d757d' }} className="status">{mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p></td>
+            <td><p data-testid="mission-status" style={{ backgroundColor: mission.reserved ? '#19a3b9' : '#6c757d' }} className="status">{mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p></td>
             <td className="joinContainer">
               <button
                 type="button"
