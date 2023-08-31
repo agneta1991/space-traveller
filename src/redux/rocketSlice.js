@@ -42,16 +42,6 @@ const rocketsSlice = createSlice({
         rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket)),
       };
     },
-    // reserveRocket: (state, action) => {
-    //     const rocketId = action.payload;
-    //     const newState = state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket));
-    //     state.rockets = newState;
-    //   },
-    //   unreserveRocket: (state, action) => {
-    //     const rocketId = action.payload;
-    //     const newState = state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket));
-    //     state.rockets = newState;
-    //   },
   },
   extraReducers: (builder) => {
     builder

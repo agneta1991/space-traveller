@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets Component renders error state 1`] = `
+<div>
+  <div>
+    Error:
+    Test Error
+  </div>
+</div>
+`;
+
+exports[`Rockets Component renders loading state 1`] = `
+<div>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`Rockets Component renders rocket data and handles reserving/canceling reservation 1`] = `
+<button
+  class="reserve-btn reserved"
+  type="button"
+>
+  Cancel Reservation
+</button>
+`;
+
+exports[`Rockets Component renders rocket data and handles reserving/canceling reservation 2`] = `
+<button
+  class="reserve-btn "
+  type="button"
+>
+  Reserve Rocket
+</button>
+`;
