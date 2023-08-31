@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionsProfile Component renders "No Missions Added" when no missions are joined 1`] = `
+<div>
+  <div>
+    <h2>
+      My Missions
+    </h2>
+    <table
+      class="missions-profile-table"
+    >
+      <tbody>
+        <tr>
+          <td
+            class="no-missions-placeholder"
+          >
+            No Missions Added
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`MissionsProfile Component renders joined missions 1`] = `
+<div>
+  <div>
+    <h2>
+      My Missions
+    </h2>
+    <table
+      class="missions-profile-table"
+    >
+      <tbody>
+        <tr>
+          <td>
+            Test Mission 2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
