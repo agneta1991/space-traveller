@@ -20,10 +20,10 @@ describe('Rockets Component', () => {
     });
   });
 
-  it(" it renders loading state", () => {
+  it(' it renders loading state', () => {
     store = mockStore({
       rockets: {
-        status: "loading",
+        status: 'loading',
         error: null,
       },
     });
@@ -31,7 +31,7 @@ describe('Rockets Component', () => {
     const { container } = render(
       <Provider store={store}>
         <Rockets />
-      </Provider>
+      </Provider>,
     );
 
     expect(container).toMatchSnapshot();
