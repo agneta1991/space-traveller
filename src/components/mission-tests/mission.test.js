@@ -2,11 +2,10 @@ import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { toBeInTheDocument, toHaveTextContent } from '@testing-library/jest-dom/matchers'; // Import toBeInTheDocument matcher
+import { toBeInTheDocument, toHaveTextContent } from '@testing-library/jest-dom/matchers'; // Import matchers
 import Missions from '../missions';
 
-expect.extend({ toBeInTheDocument });
-expect.extend({ toHaveTextContent });
+expect.extend({ toBeInTheDocument, toHaveTextContent });
 
 const mockStore = configureStore([]);
 
@@ -45,13 +44,13 @@ describe('Missions Component', () => {
       },
     });
 
-    const { getByText } = render(
+    const { container } = render(
       <Provider store={store}>
         <Missions />
       </Provider>,
     );
 
-    expect(getByText('Loading...')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders error state', () => {
@@ -63,17 +62,17 @@ describe('Missions Component', () => {
       },
     });
 
-    const { getByText } = render(
+    const { container } = render(
       <Provider store={store}>
         <Missions />
       </Provider>,
     );
 
-    expect(getByText('Error loading missions data.')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it('renders mission data and handles joining/leaving', async () => {
-    const { getByText, getAllByTestId } = render(
+    const { container, getByText } = render(
       <Provider store={store}>
         <Missions />
       </Provider>,
@@ -95,8 +94,6 @@ describe('Missions Component', () => {
       expect(updatedLeaveButton).toBeInTheDocument();
     });
 
-    const missionStatuses = getAllByTestId('mission-status');
-    expect(missionStatuses[0]).toHaveTextContent('NOT A MEMBER');
-    expect(missionStatuses[1]).toHaveTextContent('ACTIVE MEMBER');
+    expect(container).toMatchSnapshot();
   });
 });

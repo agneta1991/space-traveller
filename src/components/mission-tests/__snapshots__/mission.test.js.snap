@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions Component renders error state 1`] = `
+<div>
+  <div>
+    Error loading missions data.
+  </div>
+</div>
+`;
+
+exports[`Missions Component renders loading state 1`] = `
+<div>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`Missions Component renders mission data and handles joining/leaving 1`] = `
+<div>
+  <table
+    class="missions-table"
+  >
+    <thead>
+      <tr>
+        <th
+          class="missionColumn"
+        >
+          Mission
+        </th>
+        <th
+          class="wider-column"
+        >
+          Description
+        </th>
+        <th>
+          Status
+        </th>
+        <th />
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="even-row"
+      >
+        <td
+          class="bold-text"
+        >
+          Test Mission 1
+        </td>
+        <td>
+          Test Description 1
+        </td>
+        <td>
+          <p
+            class="status"
+            data-testid="mission-status"
+            style="background-color: rgb(109, 117, 125);"
+          >
+            NOT A MEMBER
+          </p>
+        </td>
+        <td
+          class="joinContainer"
+        >
+          <button
+            class="joinMission"
+            type="button"
+          >
+            Join Mission
+          </button>
+        </td>
+      </tr>
+      <tr
+        class="odd-row"
+      >
+        <td
+          class="bold-text"
+        >
+          Test Mission 2
+        </td>
+        <td>
+          Test Description 2
+        </td>
+        <td>
+          <p
+            class="status"
+            data-testid="mission-status"
+            style="background-color: rgb(65, 155, 249);"
+          >
+            ACTIVE MEMBER
+          </p>
+        </td>
+        <td
+          class="joinContainer"
+        >
+          <button
+            class="joinMission"
+            style="color: red; border: 1px solid red;"
+            type="button"
+          >
+            Leave Mission
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
