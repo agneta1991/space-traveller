@@ -52,7 +52,7 @@ function Missions() {
           >
             <td className="bold-text">{mission.mission_name}</td>
             <td>{mission.description}</td>
-            <td><p style={{ backgroundColor: mission.reserved ? '#419bf9' : '#6d757d' }} className="status">{mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p></td>
+            <td><p data-testid="mission-status" style={{ backgroundColor: mission.reserved ? '#419bf9' : '#6d757d' }} className="status">{mission.reserved ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}</p></td>
             <td className="joinContainer">
               <button
                 type="button"
