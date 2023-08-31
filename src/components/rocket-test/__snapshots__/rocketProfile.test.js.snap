@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RocketProfile should display "No Rockets Added" when there are no rockets booked 1`] = `
+<td
+  class="no-rocket-placeholder"
+>
+  No Rockets Added
+</td>
+`;
+
+exports[`RocketProfile should display all rockets that have been booked 1`] = `
+<td>
+  Falcon 1
+</td>
+`;
+
+exports[`RocketProfile should display all rockets that have been booked 2`] = `
+<td>
+  Falcon 9
+</td>
+`;
