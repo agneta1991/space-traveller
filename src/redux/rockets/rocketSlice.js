@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
 
@@ -11,17 +10,11 @@ const initialState = {
 const baseUrl = 'https://api.spacexdata.com/v4/rockets';
 
 export const fetchRocketsAsync = createAsyncThunk('rockets/fetchRockets', async () => {
-  // eslint-disable-next-line no-useless-catch
-  try {
-    const response = await fetch(baseUrl);
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw error;
+  const response = await fetch(baseUrl);
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
   }
+  return response.json();
 });
 
 const rocketsSlice = createSlice({
@@ -32,14 +25,18 @@ const rocketsSlice = createSlice({
       const rocketId = action.payload;
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: true } : rocket)),
+        rockets: state.rockets.map((rocket) => (
+          rocket.id === rocketId ? { ...rocket, reserved: true } : rocket
+        )),
       };
     },
     unreserveRocket: (state, action) => {
       const rocketId = action.payload;
       return {
         ...state,
-        rockets: state.rockets.map((rocket) => (rocket.id === rocketId ? { ...rocket, reserved: false } : rocket)),
+        rockets: state.rockets.map((rocket) => (
+          rocket.id === rocketId ? { ...rocket, reserved: false } : rocket
+        )),
       };
     },
   },
@@ -59,9 +56,9 @@ const rocketsSlice = createSlice({
   },
 });
 
-export const selectRocketsData = (state) => state.rockets.rockets;
+export const myRocketsData = (state) => state.rockets.rockets;
 
-export const selectMappedRockets = createSelector([selectRocketsData], (rockets) => rockets.map((rocket) => ({
+const selectMappedRockets = createSelector([myRocketsData], (rockets) => rockets.map((rocket) => ({
   id: rocket.id,
   rocket_name: rocket.name,
   description: rocket.description,
@@ -69,5 +66,6 @@ export const selectMappedRockets = createSelector([selectRocketsData], (rockets)
   reserved: rocket.reserved || false,
 })));
 
+export { selectMappedRockets };
 export default rocketsSlice.reducer;
 export const { reserveRocket, unreserveRocket } = rocketsSlice.actions;
