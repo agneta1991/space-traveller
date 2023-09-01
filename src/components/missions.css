@@ -1,7 +1,7 @@
 /* MissionsList.css */
 
 .missions-table {
-  width: 90%;
+  width: 94%;
   border-collapse: collapse;
   margin: 20px auto;
   padding: 10px;
@@ -26,7 +26,7 @@
 }
 
 .wider-column {
-  width: 65%;
+  width: 56%;
 }
 
 .missionColumn {
@@ -52,4 +52,8 @@
   border-radius: 7px;
   width: 60%;
   margin: auto;
+}
+
+.display-column {
+  width: 160px;
 }

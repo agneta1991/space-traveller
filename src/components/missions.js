@@ -38,8 +38,8 @@ function Missions() {
         <tr>
           <th className="missionColumn">Mission</th>
           <th className="wider-column">Description</th>
-          <th>Status</th>
-          <th> </th>
+          <th className="display-column">Status</th>
+          <th className="display-column"> </th>
         </tr>
       </thead>
       <tbody>
