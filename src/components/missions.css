@@ -1,0 +1,59 @@
+/* MissionsList.css */
+
+.missions-table {
+  width: 94%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.missions-table th,
+.missions-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.even-row {
+  background-color: #f2f2f2;
+}
+
+.odd-row {
+  background-color: #fff;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.wider-column {
+  width: 56%;
+}
+
+.missionColumn {
+  width: 10%;
+}
+
+.joinMission {
+  background: none;
+  border: 1px solid #6d757d;
+  font-size: 0.9rem;
+  padding: 8px;
+  margin-left: 30%;
+  cursor: pointer;
+  border-radius: 7px;
+  color: #6d757d;
+}
+
+.status {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #fff;
+  padding: 3px;
+  border-radius: 7px;
+  width: 60%;
+  margin: auto;
+}
+
+.display-column {
+  width: 160px;
+}

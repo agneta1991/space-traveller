@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component displays the correct navigation links 1`] = `
+<a
+  class="active"
+  href="/"
+>
+   
+  Rockets
+   
+</a>
+`;
+
+exports[`Header Component displays the correct navigation links 2`] = `
+<a
+  class=""
+  href="/missions"
+>
+   
+  Missions
+   
+</a>
+`;
+
+exports[`Header Component displays the correct navigation links 3`] = `
+<a
+  class=""
+  href="/profile"
+>
+   
+  Profile
+   
+</a>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Component renders correctly 1`] = `
+<div>
+  <div
+    class="main-profile-div"
+  >
+    <div
+      class="missions-profile-div"
+    >
+      <div>
+        <div>
+          <h2>
+            My Missions
+          </h2>
+          <table
+            class="missions-profile-table"
+          >
+            <tbody>
+              <tr>
+                <td>
+                  Test Mission 1
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div
+      class="rockets-profile-div"
+    >
+      <div
+        class="rocket-profile-div"
+      >
+        <div>
+          <div>
+            <h2>
+              My Rockets
+            </h2>
+            <table
+              class="rocket-profile-table"
+            >
+              <tbody>
+                <tr>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

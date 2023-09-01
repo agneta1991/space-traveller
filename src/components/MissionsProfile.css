@@ -1,0 +1,30 @@
+.missions-profile-table,
+.rocket-profile-table {
+  width: 40vw;
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+h2 {
+  margin: 20px;
+}
+
+.rocket-profile-table th,
+.rocket-profile-table td,
+.missions-profile-table th,
+.missions-profile-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.no-missions-placeholder {
+  font-weight: 600;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 10px;
+}
